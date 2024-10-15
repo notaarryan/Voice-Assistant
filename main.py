@@ -18,12 +18,13 @@ if __name__ == "__main__":
             print("Voice Asistant is Listening")
             try:
                 audio = r.listen(source,timeout=4)
+                try:
+                    command = r.recognize_google(audio)
+                    print(command)
+                except sr.UnknownValueError:
+                    print("Voice Assistant could not understand audio")
+                except Exception:
+                    speak("I am sorry I could not hear you")
             except sr.exceptions.WaitTimeoutError:
                 speak("I am sorry I could not hear you")
-        try:
-            command = r.recognize_google(audio)
-            print(command)
-        except sr.UnknownValueError:
-            print("Voice Assistant could not understand audio")
-        except Exception:
-            speak("I am sorry I could not hear you")
+        
