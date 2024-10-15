@@ -27,7 +27,7 @@ def process(command):
     if "play" in command.lower():
         for a in artist:
             if a in command:
-                music.getAlbums()
+                music.getAlbums(a)
 
     if "open" in command.lower():
         open(command)
