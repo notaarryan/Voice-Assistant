@@ -3,13 +3,16 @@ import webbrowser
 import pyttsx3
 import music
 
-artist = []
+artists = []
 
 for keys in music.artistURI:
-    artist.append(keys)
+    artists.append(keys)
 
 engine = pyttsx3.init()
 engine.setProperty('rate',150)
+
+def getArtistId(artist):
+    pass
 
 
 def open(command):
@@ -22,12 +25,17 @@ def open(command):
     elif "open my linkedin profile" in command.lower():
         webbrowser.open("https://www.linkedin.com/in/aryan-parmar-a0634b299/")
 
+def playMusic(command):
+    if "play music" in command.lower():
+        webbrowser.open("https://open.spotify.com/")
+    for artist in artists:
+        if f"play {artist}" in command.lower():
+            webbrowser.open(f"https://open.spotify.com/artist/{music.artistURI[artist]}")
+
 
 def process(command):
     if "play" in command.lower():
-        for a in artist:
-            if a in command:
-                music.getAlbums(a)
+        playMusic(command)
 
     if "open" in command.lower():
         open(command)
