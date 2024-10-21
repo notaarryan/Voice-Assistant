@@ -1,14 +1,12 @@
 # Python Voice Assistant
 
-This is a Python-based voice assistant that listens to your voice commands, processes them, and performs actions such as answering questions, playing music, and interacting with various system functionalities. It uses speech recognition and text-to-speech modules for audio input and output.
+This is a Python-based voice assistant that listens to your voice commands, processes them, and performs actions such as playing music, and opening webpages. It uses speech recognition and text-to-speech modules for audio input and output.
 
 ## Features
 
 - **Speech Recognition**: Converts your spoken commands into text.
 - **Text-to-Speech (TTS)**: Provides voice feedback using `pyttsx3`.
-- **Music Playback**: Play and control music files.
-- **macOS Integration**: Utilizes PyObjC to interact with macOS features.
-- **Web Requests**: Fetch information from the internet through `requests`.
+- **Music Playback**: Play music.
 
 ## Requirements
 
@@ -62,4 +60,4 @@ pip install -r requirements.txt
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
